@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import TextField from "@material-ui/core/TextField";
-import "./tempSocket.css";
+import "./TempSocket.css";
 
 const socket = io.connect("http://localhost:4000");
 
