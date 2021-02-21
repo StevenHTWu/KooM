@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastsContainer, ToastsStore } from "react-toasts";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
+import TempSocket from "../components/TempSocket";
 
 class Rooms extends Component {
   constructor(props) {
@@ -282,6 +283,7 @@ class Rooms extends Component {
           </div>
         </div>
         <ToastsContainer store={ToastsStore} />
+        <TempSocket />
       </React.Fragment>
     );
   }
