@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import PrivateRoute from "./pages/PrivateRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import UpdateProfile from "./pages/UpdateProfile";
+import Rooms from "./pages/Rooms";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
     >
-      <div className="w-100" style={{ maxWidth: "400px" }}>
+      <div className="w-100">
         <Router>
           <AuthProvider>
             <Switch>
@@ -26,6 +27,7 @@ function App() {
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <Route path="/Rooms" component={Rooms} />
             </Switch>
           </AuthProvider>
         </Router>
