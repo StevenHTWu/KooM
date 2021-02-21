@@ -84,6 +84,7 @@ class Rooms extends Component {
 
   attachTracks(tracks, container) {
     tracks.forEach((track) => {
+      console.log("hi");
       container.appendChild(track.attach());
     });
   }
