@@ -211,16 +211,15 @@ class Rooms extends Component {
 
     return (
       <React.Fragment>
-        <div className="container">
-          <div className="container" style={{
-            width: "300px"
+        <div>
+          <div className="d-flex pb-3 flex-column align-items-center justify-content-center" style={{
+            position: "relative",
+            top: 30,
+            bottom: 30,
           }}>
             <img src={logo} alt="logo" style={{ 
                     width:'200px',
                     height: '150px',
-                    position: "absolute",
-                    left: 0,
-                    top: 20
             }}></img>
             {!this.state.hasJoinedRoom && (
               <div className="row">
@@ -235,7 +234,7 @@ class Rooms extends Component {
           </div>
           <div className="row mt-3">
             <div className="col-6">
-              <div className="card">
+              <div className="card" style={{maxWidth: "690px", position: "relative", left: 150}}>
                 <div className="card-body">
                   <div ref="groupChat_localMedia"></div>
                   <div className="text-center">
@@ -244,7 +243,7 @@ class Rooms extends Component {
                     )}
                   </div>
                 </div>
-                <div className="card-footer">
+                <div className="card-footer text-center">
                   {this.state.hasJoinedRoom ? (
                     <button
                       className="btn btn-warning"
@@ -260,7 +259,7 @@ class Rooms extends Component {
               </div>
             </div>
             <div className="col-6">
-              <div className="card">
+              <div className="card" style={{maxWidth: "690px"}}>
                 <div className="card-body">
                   <div ref="remoteMedia"></div>
                   <div className="text-center">

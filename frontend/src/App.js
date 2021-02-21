@@ -14,9 +14,9 @@ import Rooms from "./pages/Rooms";
 
 function App() {
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
+    <div
+      //className="align-items-center justify-content-center"
+      style={{ minHeight: "100vh", paddingLeft:0, paddingRight:0}}
     >
       <div className="w-100">
         <Router>
@@ -32,7 +32,7 @@ function App() {
           </AuthProvider>
         </Router>
       </div>
-    </Container>
+    </div>
   );
 }
 

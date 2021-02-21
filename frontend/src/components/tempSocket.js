@@ -37,32 +37,36 @@ const TempSocket = () => {
   };
 
   return (
-    <div className="card">
-      <form onSubmit={onMessageSubmit}>
-        <h1>Messenger</h1>
-        <div className="name-field">
-          <TextField
-            name="name"
-            onChange={(e) => onTextChange(e)}
-            value={state.name}
-            label="Name"
-          />
+    <div className="d-flex">
+      <div style={{backgroundColor: "white", position: "relative", left: 635, right: 30}}>
+        <form onSubmit={onMessageSubmit}>
+          <h1>Messenger</h1>
+          <div className="name-field">
+            <TextField
+              name="name"
+              onChange={(e) => onTextChange(e)}
+              value={state.name}
+              label="Name"
+            />
+          </div>
+          <div>
+            <TextField
+              name="message"
+              onChange={(e) => onTextChange(e)}
+              value={state.message}
+              id="outlined-multiline-static"
+              variant="outlined"
+              label="Message"
+            />
+          </div>
+          <button style={{ position: "relative", top: 10}}>Send Message</button>
+        </form>
+      </div>
+      <div style={{backgroundColor: "white", position: "relative", left: 710}}>
+        <div className="render-chat">
+          <h1>Chat Log</h1>
+          {renderChat()}
         </div>
-        <div>
-          <TextField
-            name="message"
-            onChange={(e) => onTextChange(e)}
-            value={state.message}
-            id="outlined-multiline-static"
-            variant="outlined"
-            label="Message"
-          />
-        </div>
-        <button>Send Message</button>
-      </form>
-      <div className="render-chat">
-        <h1>Chat Log</h1>
-        {renderChat()}
       </div>
     </div>
   );
