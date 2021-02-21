@@ -1,0 +1,28 @@
+
+
+#root{
+    background-image: url("../assets/631.jpg");
+    /* background-color: red; */
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px); */
+    background-position: center;
+    background-size: cover;
+}
+
+#logo-container{
+    display: flex;
+    width: 390px;
+    background-color: white;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#logo-img{
+    height: 200px;
+    width: auto;
+    background-color: white;
+}
+
+#card-body{
+    background-color: white;
+}
