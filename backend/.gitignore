@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+.env/
 
 # testing
 /coverage
@@ -21,3 +22,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+#environment vars
+.env
