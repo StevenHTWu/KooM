@@ -5,6 +5,7 @@ import { ToastsContainer, ToastsStore } from "react-toasts";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 import TempSocket from "../components/TempSocket";
+import logo from "../assets/logo.jpg"
 
 class Rooms extends Component {
   constructor(props) {
@@ -211,28 +212,27 @@ class Rooms extends Component {
     return (
       <React.Fragment>
         <div className="container">
-          <a
-            target="_blank"
-            href="https://github.com/ankitkanojia/twillio_videochat"
-          >
-            <img
-              className="githubribbon attachment-full size-full"
-              src="https://github.blog/wp-content/uploads/2008/12/forkme_right_green_007200.png?resize=149%2C149"
-              alt="Fork me on GitHub"
-              data-recalc-dims="1"
-            />
-          </a>
-          <h2 className="mt-2">Twillio Real-Time Programmable Video</h2>
-          {!this.state.hasJoinedRoom && (
-            <div className="row">
-              <div className="col-3 form-inline">
-                <div className="form-group mt-2">
-                  <input className="form-control" type="text" ref="yourname" />{" "}
-                  {joinOrLeaveRoomButton}
+          <div className="container" style={{
+            width: "300px"
+          }}>
+            <img src={logo} alt="logo" style={{ 
+                    width:'200px',
+                    height: '150px',
+                    position: "absolute",
+                    left: 0,
+                    top: 20
+            }}></img>
+            {!this.state.hasJoinedRoom && (
+              <div className="row">
+                <div className="col-3 form-inline">
+                  <div className="form-group mt-2">
+                    <input className="form-control" type="text" ref="yourname" />{" "}
+                    {joinOrLeaveRoomButton}
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
           <div className="row mt-3">
             <div className="col-6">
               <div className="card">
