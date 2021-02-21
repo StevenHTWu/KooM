@@ -1,7 +1,7 @@
+require("dotenv").config();
 const app = require("express")();
 const server = require("http").createServer(app);
 const cors = require("cors");
-require("dotenv");
 var AccessToken = require("twilio").jwt.AccessToken;
 var VideoGrant = AccessToken.VideoGrant;
 const io = require("socket.io")(server, {
@@ -9,12 +9,6 @@ const io = require("socket.io")(server, {
     origin: "*",
     credentials: true,
   },
-});
-
-io.on("connection", (socket) => {
-  socket.on("message", ({ name, message }) => {
-    io.emit("message", { name, message });
-  });
 });
 
 app.get("/token/:identity", function (req, res) {
@@ -39,6 +33,12 @@ app.get("/token/:identity", function (req, res) {
   res.send({
     identity: identity,
     jwt: token.toJwt(),
+  });
+});
+
+io.on("connection", (socket) => {
+  socket.on("message", ({ name, message }) => {
+    io.emit("message", { name, message });
   });
 });
 

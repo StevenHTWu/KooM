@@ -1,14 +1,10 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
-import { ToastsContainer, ToastsStore } from "react-toasts";
-import axios from "axios";
+import { Link, Redirect, useHistory } from "react-router-dom";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
-  const [hasJoinedRoom, setHasJoinedRoom] = useState(false);
-  const yourname = useRef("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
 
@@ -23,30 +19,9 @@ export default function Dashboard() {
     }
   }
 
-  const getTwillioToken = () => {
-    const currentUserName = yourname;
-    if (currentUserName.length === 0) {
-      ToastsStore.error("Please enter the username!");
-      return;
-    }
-
-    axios.get("/token/" + currentUserName).then((results) => {
-      const { identity, jwt } = results.data;
-      this.setState(
-        {
-          identity,
-          jwt,
-        },
-        () => {
-          if (jwt.length === 0 || identity.length === 0) {
-            ToastsStore.error("Issue to fetch token!");
-          } else {
-            this.setState({ userName: currentUserName });
-            this.joinRoom();
-          }
-        }
-      );
-    });
+  const routeChange = () => {
+    let path = `Rooms`;
+    history.push(path);
   };
 
   return (
@@ -59,24 +34,8 @@ export default function Dashboard() {
           <Link to="update-profile" className="btn btn-primary w-100 mt-3">
             Update Profile
           </Link>
-          {!hasJoinedRoom && (
-            <div className="row">
-              <div className="col-3 form-inline">
-                <div className="form-group mt-2">
-                  <input className="form-control" type="text" ref={yourname} />{" "}
-                  <button
-                    className="btn btn-success ml-2"
-                    onClick={() => {
-                      getTwillioToken();
-                      history.push("/Rooms");
-                    }}
-                  >
-                    Join Room
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
+          <Button onClick={routeChange}>Create Room</Button>
+          <Button>Join Room</Button>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

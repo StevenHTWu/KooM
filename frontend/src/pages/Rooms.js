@@ -17,7 +17,7 @@ class Rooms extends Component {
       roomNameErr: false, // Track error for room name TextField
       previewTracks: null,
       localMediaAvailable: false,
-      hasJoinedRoom: true,
+      hasJoinedRoom: false,
       hasParticipantsJoinedRoom: false,
       activeRoom: "", // Track the current active room
       jwt: "",
