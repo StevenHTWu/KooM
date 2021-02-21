@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import Video from "twilio-video";
 import axios from "axios";
-import "./global.css";
 import { ToastsContainer, ToastsStore } from "react-toasts";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
-class App extends Component {
+class Rooms extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -18,7 +17,7 @@ class App extends Component {
       roomNameErr: false, // Track error for room name TextField
       previewTracks: null,
       localMediaAvailable: false,
-      hasJoinedRoom: false,
+      hasJoinedRoom: true,
       hasParticipantsJoinedRoom: false,
       activeRoom: "", // Track the current active room
       jwt: "",
@@ -287,4 +286,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Rooms;
