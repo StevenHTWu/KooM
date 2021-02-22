@@ -39,7 +39,7 @@ async function quickstart() {
     console.log("badddd")
     twilio_client.messages.create({
       body: msgResp,
-      to: '+19494392643',  // Text this number
+      to: 'Your Number',  // Text this number
       from: '+19254063163' // From a valid Twilio number
     })
     .then((message) => console.log(message.sid));
