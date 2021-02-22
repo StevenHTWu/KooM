@@ -2,8 +2,8 @@
 const language = require('@google-cloud/language');
 
 //---------------------------------
-var accountSid = 'ACbfa231506cafc7730ee88e5a8d594fab'; // Your Account SID from www.twilio.com/console
-var authToken = '75f8e91d1f78a8169e1828938ef3f88b';   // Your Auth Token from www.twilio.com/console
+var accountSid = '...'; // Your Account SID from www.twilio.com/console
+var authToken = '...';   // Your Auth Token from www.twilio.com/console
 
 var twilio = require('twilio');
 var twilio_client = new twilio(accountSid, authToken);
